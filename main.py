@@ -12,10 +12,13 @@ def home():
 
 @app.route("/api/v1/<word>/")
 def api(word):
-    definition = df.loc[df['word'] == word]['definition'].squeeze()
-    result_dictionary = {"word": word, "definition": definition}
-    return result_dictionary
+    if word in df["word"].values:
+        definition = df.loc[df['word'] == word]['definition'].squeeze()
+        result_dictionary = {"word": word, "definition": definition}
 
+    else:
+        result_dictionary = {"word": word, "definition": "Not found"}
+    return result_dictionary
 
 
 # To run the app if only main.py is executed directly
