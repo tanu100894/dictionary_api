@@ -70,6 +70,6 @@ Use the endpoint below to get a word's definition in JSON format:
     ```json
     {
       "word": "acid",
-      "definition": "1. A compound capable of transferring a hydrogen ion......"
+      "definition": "Not found"
     }
     ```
